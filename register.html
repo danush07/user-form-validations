@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>User Registration Form</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>User Registration Form with Validation</h1>
+    </header>
+    <main>
+      <div class="container">
+        <div class="center">
+          <form id="registration-form" onsubmit="validateForm(event)">
+            <div class="form-group">
+              <label for="username">Username :</label>
+              <input
+                type="text"
+                id="username"
+                name="username"
+                onchange="validateUsername()"
+              />
+              <div id="username-error" class="error-message"></div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email :</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                onchange="validateEmail()"
+              />
+              <div id="email-error" class="error-message"></div>
+            </div>
+            <div class="form-group">
+              <label for="password">Password :</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                onchange="validatePassword()"
+              />
+              <div id="password-error" class="error-message"></div>
+            </div>
+            <div class="form-group">
+              <label for="cpassword">Confirm Password :</label>
+              <input
+                type="password"
+                id="cpassword"
+                name="cpassword"
+                onchange="validateConfirmPassword()"
+              />
+              <div id="cpassword-error" class="error-message"></div>
+            </div>
+            <div class="form-group" >
+              <label class="gender-label"">Gender :</label>
+              <label for="male">Male</label>
+              <input
+                type="radio"
+                id="male"
+                name="gender"
+                value="male"
+                onchange="validateGender()"
+              />
+              <label for="female">Female</label>
+              <input
+                type="radio"
+                id="female"
+                name="gender"
+                value="female"
+                onchange="validateGender()"
+              />
+              <label for="other">Other</label>
+              <input
+                type="radio"
+                id="other"
+                name="gender"
+                value="other"
+                onchange="validateGender()"
+              />
+              <div id="gender-error" class="error-message"></div>
+            </div>
+            <div class="form-group">
+              <label for="dob">Date of Birth :</label>
+              <input type="date" id="dob" name="dob" onchange="validateDOB()" />
+              <div id="dob-error" class="error-message"></div>
+            </div>
+            <div class="form-group">
+              <label for="country">Country :</label>
+              <select id="country" name="country" onchange="validateCountry()">
+                <option value="" disabled selected>Select your country</option>
+                <option value="usa">USA</option>
+                <option value="canada">Canada</option>
+                <option value="uk">UK</option>
+              </select>
+              <div id="country-error" class="error-message"></div>
+            </div>
+            <div class="form-group">
+              <div class="terms-align">
+                <input
+                  type="checkbox"
+                  id="terms"
+                  name="terms"
+                  onchange="validateTerms()"
+                />
+                <label class="terms-tag" for="terms"
+                  >I accept the Terms and Conditions</label
+                >
+              </div>
+              <div id="terms-error" class="error-message"></div>
+            </div>
+
+            <button onsubmit="validateForm()">Submit</button>
+          </form>
+        </div>
+      </div>
+      <div id="user-data"></div>
+    </main>
+    <script src="./script.js"></script>
+  </body>
+</html>
