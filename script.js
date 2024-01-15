@@ -72,10 +72,10 @@ function validateConfirmPassword() {
   }
 }
 function validateGender() {
-  var genderError = document.getElementById("gender-error");
-  var male = document.getElementById("male");
-  var female = document.getElementById("female");
-  var other = document.getElementById("other");
+  const genderError = document.getElementById("gender-error");
+  const  male = document.getElementById("male");
+  const female = document.getElementById("female");
+  const other = document.getElementById("other");
 
   if (!(male.checked || female.checked || other.checked)) {
     genderError.textContent = "Please select a gender.";
